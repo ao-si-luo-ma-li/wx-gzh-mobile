@@ -1,9 +1,9 @@
 <template>
-  <apply-cost :cost="costDetail"></apply-cost>
+  <cost-list :cost="costDetail"></cost-list>
 </template>
 
 <script>
-import ApplyCost from '../../components/ApplyCostNew';
+import CostList from '../../components/CostList';
 import { cost } from '../../mock/cost';
 export default {
   data() {
@@ -15,7 +15,7 @@ export default {
     this.costDetail = cost[this.$route.params.cost];
   },
   components: {
-    ApplyCost,
+    CostList,
   },
 };
 </script>

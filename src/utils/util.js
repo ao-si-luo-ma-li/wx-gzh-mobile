@@ -1,7 +1,34 @@
-const cryptoJs =  require('crypto-js');
+const cryptoJs = require('crypto-js');
 
-const imageFormats = ['jpeg','jpg','png','bmp','gif'];
-const videoFormats = ['mp4','flv','wmv','avi','mov','dat','asf','rm','rmvb','ram','mpg','mpeg','3gp','m4v','dvix','dv','mkv','vob','qt','cpk','fli','flc','mod','ts','webm','m2ts'];
+const imageFormats = ['jpeg', 'jpg', 'png', 'bmp', 'gif'];
+const videoFormats = [
+  'mp4',
+  'flv',
+  'wmv',
+  'avi',
+  'mov',
+  'dat',
+  'asf',
+  'rm',
+  'rmvb',
+  'ram',
+  'mpg',
+  'mpeg',
+  '3gp',
+  'm4v',
+  'dvix',
+  'dv',
+  'mkv',
+  'vob',
+  'qt',
+  'cpk',
+  'fli',
+  'flc',
+  'mod',
+  'ts',
+  'webm',
+  'm2ts',
+];
 
 const md5Key = 'eiVFACtNeIYY408HZO0iKHCard';
 
@@ -17,32 +44,36 @@ const mobileUrl = 'http://192.168.1.98:29990/newstatic/yzApp/';
 const apiUrl = 'https://www.youyuecredit.com';
 
 // 获取日期方法 yyyy-MM-dd HH:mm:ss
-const formatTime = (date) => {
-  date = date ? new Date(date) : new Date()
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
+const formatTime = date => {
+  date = date ? new Date(date) : new Date();
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const hour = date.getHours();
+  const minute = date.getMinutes();
+  const second = date.getSeconds();
 
-  return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-}
+  return (
+    [year, month, day].map(formatNumber).join('-') +
+    ' ' +
+    [hour, minute, second].map(formatNumber).join(':')
+  );
+};
 
 // 获取日期方法 yyyy-MM-dd
-const formatDate = (date) => {
-  date = new Date(date)
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
+const formatDate = date => {
+  date = new Date(date);
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
 
-  return [year, month, day].map(formatNumber).join('-')
-}
+  return [year, month, day].map(formatNumber).join('-');
+};
 
 const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
-}
+  n = n.toString();
+  return n[1] ? n : '0' + n;
+};
 
 // md5加密
 const md5Params = obj => {
@@ -53,70 +84,75 @@ const md5Params = obj => {
   strs.sort();
   strs = strs.join('&') + md5Key;
   return cryptoJs.MD5(strs);
-}
+};
 
 const parseParam = obj => {
-  let paramStr = []
+  let paramStr = [];
   for (key in obj) {
-    paramStr.push(`${key}=${obj[key]}`)
+    paramStr.push(`${key}=${obj[key]}`);
   }
   return paramStr.join('&');
-}
+};
 // 验证身份证
 const verifyIdCode = function(code) {
   //身份证号合法性验证
   //支持15位和18位身份证号
   //支持地址编码、出生日期、校验位验证
   var city = {
-    11: "北京",
-    12: "天津",
-    13: "河北",
-    14: "山西",
-    15: "内蒙古",
-    21: "辽宁",
-    22: "吉林",
-    23: "黑龙江 ",
-    31: "上海",
-    32: "江苏",
-    33: "浙江",
-    34: "安徽",
-    35: "福建",
-    36: "江西",
-    37: "山东",
-    41: "河南",
-    42: "湖北 ",
-    43: "湖南",
-    44: "广东",
-    45: "广西",
-    46: "海南",
-    50: "重庆",
-    51: "四川",
-    52: "贵州",
-    53: "云南",
-    54: "西藏 ",
-    61: "陕西",
-    62: "甘肃",
-    63: "青海",
-    64: "宁夏",
-    65: "新疆",
-    71: "台湾",
-    81: "香港",
-    82: "澳门",
-    91: "国外 "
+    11: '北京',
+    12: '天津',
+    13: '河北',
+    14: '山西',
+    15: '内蒙古',
+    21: '辽宁',
+    22: '吉林',
+    23: '黑龙江 ',
+    31: '上海',
+    32: '江苏',
+    33: '浙江',
+    34: '安徽',
+    35: '福建',
+    36: '江西',
+    37: '山东',
+    41: '河南',
+    42: '湖北 ',
+    43: '湖南',
+    44: '广东',
+    45: '广西',
+    46: '海南',
+    50: '重庆',
+    51: '四川',
+    52: '贵州',
+    53: '云南',
+    54: '西藏 ',
+    61: '陕西',
+    62: '甘肃',
+    63: '青海',
+    64: '宁夏',
+    65: '新疆',
+    71: '台湾',
+    81: '香港',
+    82: '澳门',
+    91: '国外 ',
   };
   var row = {
-    'pass': true,
-    'msg': '验证成功'
+    pass: true,
+    msg: '验证成功',
   };
-  if (!code || !/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|[xX])$/.test(code)) {
+  if (
+    !code ||
+    !/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|[xX])$/.test(
+      code
+    )
+  ) {
     row = {
-      'pass': false,
-      'msg': '身份证号格式错误'
+      pass: false,
+      msg: '身份证号格式错误',
     };
   } else if (!city[code.substr(0, 2)]) {
     row = {
-      'pass': false,
-      'msg': '身份证号地址编码错误'
+      pass: false,
+      msg: '身份证号地址编码错误',
     };
   } else {
     //18位身份证需要验证最后一位校验位
@@ -137,14 +173,14 @@ const verifyIdCode = function(code) {
       }
       if (parity[sum % 11] != code[17].toUpperCase()) {
         row = {
-          'pass': false,
-          'msg': '身份证号校验位错误'
+          pass: false,
+          msg: '身份证号校验位错误',
         };
       }
     }
   }
   return row;
-}
+};
 /*
  * 判断数组中是否有该目标值
  * @param arr, obj
@@ -164,7 +200,7 @@ const arrContainsValue = (arr, source, obj) => {
     }
   }
   return flag;
-}
+};
 /*
  * 判断数组中是否有该目标值
  * @param arr, obj
@@ -183,14 +219,17 @@ const arrContainsIndex = (arr, source, obj) => {
     }
   }
   return flag;
-}
+};
 
 // 获取日期方法 yyyy-MM-dd
-const getCreateTimeDate = (time) => {
+const getCreateTimeDate = time => {
   var date = new Date(time);
   var Y = date.getFullYear() + '-';
   // 月份是从0开始计算的
-  var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+  var M =
+    (date.getMonth() + 1 < 10
+      ? '0' + (date.getMonth() + 1)
+      : date.getMonth() + 1) + '-';
   var D = date.getDate();
   return Y + M + D;
 };
@@ -203,20 +242,21 @@ const getTimeDistance = (start, end) => {
   let hour = parseInt(distance / 3600);
   let min = parseInt((distance - hour * 3600) / 60);
   let seconds = distance % 60;
-  return `${hour ? hour+'小时' : ''}${min}分${seconds}秒`;
+  return `${hour ? hour + '小时' : ''}${min}分${seconds}秒`;
 };
 
-
 //获取地址栏中的参数
-const GetUrlType = (url) => {
+const GetUrlType = url => {
   var urlStr = url;
-  var length = urlStr.indexOf("?");
+  var length = urlStr.indexOf('?');
   var theRequest = {};
   if (length != -1) {
     var str = urlStr.substr(length + 1);
-    var strs = str.split("&"); // 数组形式保存,如 [type=2,serviceId=5]
+    var strs = str.split('&'); // 数组形式保存,如 [type=2,serviceId=5]
     for (var i = 0; i < strs.length; i++) {
-      theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+      theRequest[strs[i].split('=')[0]] = decodeURIComponent(
+        strs[i].split('=')[1]
+      );
     }
   }
   return theRequest;
@@ -234,30 +274,28 @@ const storageGetter = key => {
 //  检测token是否过期。仅在vue中适用
 const isTokenInvaild = function(data) {
   if (data.code == '401') {
-    this.$router.push('/login')
+    this.$router.push('/login');
   } else if (data.code != '200') {
-
   }
-}
+};
 
 //  显示提示信息的弹窗
 const popInfo = function(mes, Toast, callback) {
   Toast({
     message: mes,
     position: 'bottom',
-    duration: 1500
+    duration: 1500,
   });
   if (callback) {
-    setTimeout(callback, 1500)
+    setTimeout(callback, 1500);
   }
-}
+};
 
 // 判断终端信息
 const isiOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 
 const base64Tofile = function(base64) {
-
-  //dataURL 的格式为 “data:image/png;base64,****”,逗号之前都是一些说明性的文字，我们只需要逗号之后的就行了   
+  //dataURL 的格式为 “data:image/png;base64,****”,逗号之前都是一些说明性的文字，我们只需要逗号之后的就行了
   let data = base64.split(',')[1];
 
   // atob，其作用是做解码，因为图片格式的base64.
@@ -271,16 +309,16 @@ const base64Tofile = function(base64) {
 
   // Blob是存储二进制文件的容器，典型的Blob对象是一个图片或者声音文件，其默认是PNG格式
   var blob = new Blob([ia], {
-    type: "image/jpeg"
+    type: 'image/jpeg',
   });
-  return blob
+  return blob;
 };
 
 // 页面主体设置 fixed 来禁止滚动
 const docFixed = function() {
   let scrollTop = 0;
   let bodyEl = document.body;
-  return (isFixed) => {
+  return isFixed => {
     if (isFixed) {
       scrollTop = window.scrollY;
 
@@ -291,7 +329,7 @@ const docFixed = function() {
       bodyEl.style.top = '';
       window.scrollTo(0, top); //  回到原先的top
     }
-  }
+  };
 };
 const stopBodyScroll = docFixed();
 
@@ -303,25 +341,41 @@ function randArr(n, start = 2, end = 6) {
   /*1、要正整数。（可以是字符串）
     2、在所给范围内：start < n < end
   */
-  var rep = (/[^0-9]/g);
+  var rep = /[^0-9]/g;
   if (rep.test(n)) {
     alert('请输入正整数');
   }
-  if (n < 1 || n > (end - start + 1)) {
+  if (n < 1 || n > end - start + 1) {
     alert('数组长度不能超过' + (end - start + 1));
   }
   var resultArr = [];
   // 生成长度为(end-start+1)，且最后一位值是 end 的数组
-  var temArr = Array.apply(null, Array(end - 0 + 1)).map(function(item, index) {
-    return index;
-  }).slice(start);
+  var temArr = Array.apply(null, Array(end - 0 + 1))
+    .map(function(item, index) {
+      return index;
+    })
+    .slice(start);
   for (var i = 0; i < n; i++) {
     // randIndex 必须转化成整数
     var randIndex = Math.floor(Math.random() * temArr.length) - 1;
     randIndex = randIndex < 0 ? 0 : randIndex;
     resultArr = resultArr.concat(temArr.splice(randIndex, 1));
   }
-  return resultArr
+  return resultArr;
+}
+
+function setNavBarTitle(title) {
+  document.title = title;
+  const i = document.createElement('iframe');
+  // 加载一个空页面
+  i.src = '/jzza/favicon.ico';
+  i.style.display = 'none';
+  i.onload = () => {
+    setTimeout(() => {
+      i.remove();
+    }, 20);
+  };
+  document.body.appendChild(i);
 }
 
 module.exports = {
@@ -346,5 +400,6 @@ module.exports = {
   stopBodyScroll: stopBodyScroll,
   isiOS: isiOS,
   verifyIdCode: verifyIdCode,
-  md5Params: md5Params
-}
+  md5Params: md5Params,
+  setNavBarTitle,
+};

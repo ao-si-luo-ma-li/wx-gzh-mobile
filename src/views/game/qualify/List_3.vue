@@ -3,14 +3,15 @@
 </template>
 
 <script>
-import ApplyList from '../../../components/ApplyList'
+import ApplyList from '../../../components/ApplyList.vue'
 export default {
   name: 'qualify-list-3',
   data() {
     return {
       qualifylist: [
-        {icon: require('@/assets/images/wangwen.png'), title: '网文申请须知', price: '', path: '/apply-tip/wangwen'},
-        {icon: require('@/assets/images/fee.png'), title: '网文申请预估费用', price: '', path: '/apply-cost/wangwen'},
+        {icon: require('@/assets/images/wangwen/ww_yanchu.png'), title: '演出类', price: '', path: '/classify-list/yanchu'},
+        {icon: require('@/assets/images/wangwen/ww_dongman.png'), title: '动漫类', price: '', path: '/classify-list/dongman'},
+        {icon: require('@/assets/images/wangwen/ww_yinyue.png'), title: '音乐类', price: '', path: '/classify-list/yinyue'},
       ]
     }
   },
