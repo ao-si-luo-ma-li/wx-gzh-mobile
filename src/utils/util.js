@@ -378,6 +378,10 @@ function setNavBarTitle(title) {
   document.body.appendChild(i);
 }
 
+function isArray(arr) {
+  return arr instanceof Array;
+}
+
 module.exports = {
   formatTime: formatTime,
   formatDate: formatDate,
@@ -402,4 +406,5 @@ module.exports = {
   verifyIdCode: verifyIdCode,
   md5Params: md5Params,
   setNavBarTitle,
+  isArray,
 };

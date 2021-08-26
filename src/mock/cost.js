@@ -271,6 +271,116 @@ export const cost = {
       },
     ],
   },
+  ww_b1_idc: {
+    feeTitle: '互联网数据中心业务（简称IDC)',
+    type: ['互联网数据中心业务（简称IDC)'],
+    subType: ['申请', '更新'],
+    imgTitle: require('@/assets/images/dianxin/b1/b1_idc.png'),
+    table: [
+      {
+        subTypeCost: [50000, 50000],
+      },
+    ],
+  },
+  ww_b1_isp: {
+    feeTitle: '互联网接入服务业务（简称ISP）',
+    type: ['互联网接入服务业务（简称ISP）'],
+    subType: ['申请', '更新'],
+    imgTitle: require('@/assets/images/dianxin/b1/b1_isp.png'),
+    table: [
+      {
+        subTypeCost: [50000, 50000],
+      },
+    ],
+  },
+  ww_b1_cdn: {
+    feeTitle: '内容分发网络业务（简称CDN）',
+    type: ['内容分发网络业务（简称CDN）'],
+    subType: ['申请', '更新'],
+    imgTitle: require('@/assets/images/dianxin/b1/b1_cdn.png'),
+    table: [
+      {
+        subTypeCost: [50000, 50000],
+      },
+    ],
+  },
+  ww_b1_ipvpn: {
+    feeTitle: '国内互联网虚拟专用网业务（简称IP-VPN）',
+    type: ['国内互联网虚拟专用网业务（简称IP-VPN）'],
+    subType: ['申请', '更新'],
+    imgTitle: require('@/assets/images/dianxin/b1/b1_vpn.png'),
+    table: [
+      {
+        subTypeCost: [120000, 120000],
+      },
+    ],
+  },
+  ww_b2_sp: {
+    feeTitle: 'SP-信息服务',
+    type: ['SP-信息服务'],
+    subType: ['申请', '更新'],
+    imgTitle: require('@/assets/images/dianxin/b2/b2_sp.png'),
+    table: [
+      {
+        subTypeCost: [50000, 50000],
+      },
+    ],
+  },
+  ww_b2_hujiao: {
+    feeTitle: '呼叫中心业务',
+    type: ['上海', '全国'],
+    subType: ['申请', '更新'],
+    imgTitle: require('@/assets/images/dianxin/b2/b2_hujiao.png'),
+    table: [
+      {
+        subTypeCost: [50000, 50000],
+        multiCost: [
+          {
+            name: '股权超5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
+        ],
+      },
+    ],
+  },
+  ww_b2_icp: {
+    feeTitle: 'ICP-信息服务-仅限互联网服务',
+    type: ['内资', '外资（<10%）', '外资（>10%）'],
+    subType: ['申请', '更新'],
+    imgTitle: require('@/assets/images/dianxin/b2/b2_icp.png'),
+    table: [
+      {
+        subTypeCost: [50000, 50000],
+      },
+      {
+        subTypeCost: [60000, 60000],
+      },
+      {
+        subTypeCost: [100000, 100000],
+      },
+    ],
+  },
+  ww_b2_edi: {
+    feeTitle: 'EDI-在线数据处理与交易处理业务',
+    type: ['内资', '外资（<10%）', '外资（>10%）'],
+    subType: ['申请', '更新'],
+    imgTitle: require('@/assets/images/dianxin/b2/b2_edi.png'),
+    table: [
+      {
+        subTypeCost: [50000, 50000],
+      },
+      {
+        subTypeCost: [60000, 60000],
+      },
+      {
+        subTypeCost: [100000, 100000],
+      },
+    ],
+  },
 };
 // export const cost = {
 //   wangwen: {

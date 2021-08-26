@@ -1,21 +1,72 @@
 <template>
-  <apply-list :list="qualifylist"></apply-list>
+  <tab-classify-list :tabList="qualifylist"></tab-classify-list>
 </template>
 
 <script>
-import ApplyList from '../../../components/ApplyList'
+import TabClassifyList from '../../../components/TabClassifyList.vue';
 export default {
   name: 'qualify-list-4',
   data() {
     return {
       qualifylist: [
-        {icon: require('@/assets/images/ICPEDI.png'), title: 'ICP申请须知', price: '', path: '/apply-tip/dianxin'},
-        {icon: require('@/assets/images/fee.png'), title: 'ICP申请预估费用', price: '', path: '/apply-cost/dianxin'},
-      ]
-    }
+        {
+          title: '第一类增值电信业务（B1）',
+          list: [
+            {
+              title: `<div style="margin-bottom: 14px;">互联网数据中心业务（简称IDC)</div>`,
+              path: '/classify-list/b1_idc',
+            },
+            {
+              title:
+                '<div style="margin-bottom: 14px;">内容分发网络业务（简称CDN）</div>',
+              path: '/classify-list/b1_cdn',
+            },
+            {
+              title:
+                '<div style="margin-bottom: 14px;">国内互联网虚拟专用网业务（简称IP-VPN）</div>',
+              path: '/classify-list/b1_ipvpn',
+            },
+            {
+              title:
+                '<div style="margin-bottom: 14px;">互联网接入服务业务（简称ISP）</div>',
+              path: '/classify-list/b1_isp',
+            },
+          ],
+        },
+        {
+          title: '&nbsp;&nbsp;&nbsp;第二类增值电信业务（B2）',
+          list: [
+            {
+              title: 'EDI-在线数据处理与交易处理业务',
+              path: '/classify-list/b2_edi',
+            },
+            {
+              title: 'ICP-信息服务-仅限互联网服务',
+              path: '/classify-list/b2_icp',
+            },
+            {
+              title: 'SP-信息服务-信息即时交互服务',
+              path: '/classify-list/b2_sp',
+            },
+            {
+              title: '呼叫中心（全国/上海）',
+              path: '/classify-list/b2_hujiao',
+            },
+            {
+              title: '存储转发类业务',
+              path: '/classify-list/b2_cunchu',
+            },
+            {
+              title: '国内多方通信服务业务',
+              path: '/classify-list/b2_guonei',
+            },
+          ],
+        },
+      ],
+    };
   },
   components: {
-    ApplyList
-  }
-}
+    TabClassifyList,
+  },
+};
 </script>

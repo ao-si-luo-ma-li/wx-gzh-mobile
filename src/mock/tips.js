@@ -1,3 +1,5 @@
+import { qualifyLink } from './qualifyLink';
+
 export const tips = {
   ICP: {
     tips: [
@@ -232,6 +234,71 @@ export const classifyDetial = {
     book: require('@/assets/images/guangbo/book_ds.png'),
     video: '',
   },
+  b1_idc: {
+    title: require('@/assets/images/dianxin/b1/b1_idc.png'),
+    book: require('@/assets/images/dianxin/b1/book_b1_idc.png'),
+    video: '',
+  },
+  b1_cdn: {
+    title: require('@/assets/images/dianxin/b1/b1_cdn.png'),
+    book: require('@/assets/images/dianxin/b1/book_b1_cdn.jpg'),
+    video: '',
+  },
+  b1_ipvpn: {
+    title: require('@/assets/images/dianxin/b1/b1_vpn.png'),
+    book: require('@/assets/images/dianxin/b1/book_b1_vpn.png'),
+    video: '',
+  },
+  b1_isp: {
+    title: require('@/assets/images/dianxin/b1/b1_isp.png'),
+    book: require('@/assets/images/dianxin/b1/book_b1_isp.png'),
+    video: '',
+  },
+  b2_edi: {
+    title: require('@/assets/images/dianxin/b2/b2_edi.png'),
+    book: [
+      require('@/assets/images/dianxin/b2/book_b2_edi_1.jpg'),
+      require('@/assets/images/dianxin/b2/book_b2_edi_2.jpg'),
+    ],
+    docPath: '/dy-apply-list/b2_edi',
+    video: '',
+  },
+  b2_icp: {
+    title: require('@/assets/images/dianxin/b2/b2_icp.png'),
+    book: require('@/assets/images/dianxin/b2/book_b2_icp_double.png'),
+    docPath: '/dy-apply-list/b2_icp',
+    video: '',
+  },
+  b2_sp: {
+    title: require('@/assets/images/dianxin/b2/b2_sp.png'),
+    book: require('@/assets/images/dianxin/b2/book_b2_sp.png'),
+    video: '',
+  },
+  b2_guonei: {
+    title: require('@/assets/images/dianxin/b2/b2_guonei.png'),
+    book: require('@/assets/images/dianxin/b2/book_b2_guonei.png'),
+    video: '',
+    costPath: '#',
+    costCb() {
+      this.$Message.warning({ content: '此业务需一事一议，请电话联系' });
+      return false;
+    },
+  },
+  b2_hujiao: {
+    title: require('@/assets/images/dianxin/b2/b2_hujiao.png'),
+    book: require('@/assets/images/dianxin/b2/book_b2_hujiao.jpg'),
+    video: '',
+  },
+  b2_cunchu: {
+    title: require('@/assets/images/dianxin/b2/b2_cunchu.png'),
+    book: '',
+    video: '',
+    costPath: '#',
+    costCb() {
+      this.$Message.warning({ content: '此业务需一事一议，请电话联系' });
+      return false;
+    },
+  },
 };
 
 export const businessDetial = {
@@ -330,6 +397,134 @@ export const businessDetial = {
     就不能申请网剧，申请网剧就不能申请电视局
     报备
     </div>
+    `,
+  },
+  b1_idc: {
+    title: require('@/assets/images/dianxin/b1/b1_idc.png'),
+    content: `
+    互联网数据中心（Internet Data Center）
+    简称IDC，是电信部门利用已有互联网通信线路
+    带宽资源，建立标准化的电信专业级机房环境，
+    为企业政府提供服务器托管租用及相关增值
+    等方面服务。
+    `,
+  },
+  b1_cdn: {
+    title: require('@/assets/images/dianxin/b1/b1_cdn.png'),
+    content: `
+    CDN指利用分布在不同区域的节点服务器群组成
+    流量分配管理网络平台，为用户提供内容的分
+    散存储和高速缓存，并根据网络动态流量和负
+    载状况，将内容分发到快速、稳定的缓存服务
+    器上，提高用户内容的访问响应速度和服务的
+    可用性服务。（常见网宿、蓝讯、帝联、快网
+    世纪互联等公司为第三方提供的网页加速 
+    下载加速 、流媒体加速、 视频加速服务等）
+    `,
+  },
+  b1_ipvpn: {
+    title: require('@/assets/images/dianxin/b1/b1_vpn.png'),
+    content: `
+    国内互联网虚拟专用网业务（IP-VPN）是指
+    经营者利用自有或租用的互联网网络资源，
+    采用TCP/IP协议，为国内用户定制互联网闭合
+    用户群网络的服务。互联网虚拟专用网主要
+    采用IP隧道等基于TCP/IP的技术组建，并提供
+    一定的安全性和保密性，专网内可实现加密的
+    透明分组传送。（常见IP虚拟专用网络。
+    MPLS、VPN的第三方供应商）。
+    `,
+  },
+  b1_isp: {
+    title: require('@/assets/images/dianxin/b1/b1_isp.png'),
+    content: `
+    互联网服务提供商（Internet Service Provider）
+    简称ISP，经营者：一是接入服务，即帮助用户
+    接入Internet；二是导航服务，即帮助用户
+    在Internet上找到所需要的信息；
+    三是信息服务，即建立数据服务系统，
+    收集、加工、存储信息，定期维护更新，
+    并通过网络向用户提供信息内容服务。
+    `,
+  },
+  b2_edi: {
+    title: require('@/assets/images/dianxin/b2/b2_edi.png'),
+    content: `
+    利用各种与公用通信网或互联网相连的数据与
+    交易/事务处理应用平台，通过网络为用户提供
+    在线交易/事务处理的。包括交易处理业务、电
+    子数据交换业务、网络/电子设备数据处理业
+    务。（常见 淘宝、京东、由第三方入驻的电商
+    平台）
+    `,
+  },
+  b2_icp: {
+    title: require('@/assets/images/dianxin/b2/b2_icp.png'),
+    content: `
+    ICP-信息服务-仅限互联网服务 是指通过信息采
+    集、开发、处理和信息平台的建设，通过公用
+    通信网或互联网向用户提供信息服务的业务
+    （常见 58同城，赶集网等信息发布平台）、递
+    送服务、信息搜索查询服务、信息社区平台
+    等）
+    `,
+  },
+  b2_sp: {
+    title: require('@/assets/images/dianxin/b2/b2_sp.png'),
+    content: `
+    <div style="line-height: 1.6">
+    SP-信息服务-信息即时交互服务指利用公用通
+    信网或互联网，并通过运行在计算机、智能终
+    端等的客户端软件、浏览器等，为用户提供即
+    时发送和接收消息（包括文本、图片、音视
+    频）、文件等信息的服务。信息即时交互服务
+    包括即时通信、交互式语音服务（IVR），以及
+    基于互联网的端到端双向实时话音业务（常见 
+    第三方发送短信、彩信业务，比如承接XX公司
+    AA短信验证码业务）
+    </div>
+    `,
+  },
+  b2_guonei: {
+    title: require('@/assets/images/dianxin/b2/b2_guonei.png'),
+    content: `
+    <div style="margin-top: -15px;">
+    国内多方通信服务业务是指通过多方通信平台
+    和公用通信网或互联网实现国内两点或多点之
+    间实时交互式或点播式的话音、图像通信服
+    务。（常见的会畅、全时、二六三等提供的多
+    方电话会议服务业务和国内可视电话会议服务
+    业务；好视通、康拓普无 纸化会议系统
+    （Com-Meeting）提供的国内互联网会议电视
+    及图像服务等。）
+    </div>
+    `,
+  },
+  b2_hujiao: {
+    title: require('@/assets/images/dianxin/b2/b2_hujiao.png'),
+    content: `
+    <div style="line-height: 1.5;margin-top:-16px">
+    呼叫中心业务是指受企事业等相关单位委托，
+    利用与公用通信网或互联网连接的呼叫中心系
+    统和数据库技术，通过网络向用户提供有关该
+    单位的业务咨询、（比如百度）信息咨询和数
+    据查询等服务。户可也以通过固定电话、传
+    真、移动通信终端和计算机终端等多种方式进
+    入系统，访问系统的数据库，以语音、传真、
+    电子邮件、短消息等方式获取有关该单位的信
+    息咨询（常见英立讯、优软科技、集时通讯等
+    公司提供的座席外包、服务专员出租、系统设
+    备出租、 业务外包等服务）
+    </div>
+    `,
+  },
+  b2_cunchu: {
+    title: require('@/assets/images/dianxin/b2/b2_cunchu.png'),
+    content: `
+    存储转发类业务是指利用存储转发机制为用户
+    提供信息发送的业务。存储转发类业务包括语
+    音信箱、电子邮件、传真存储转发等业务。
+    （常见 电子邮箱 语音留言信箱等）
     `,
   },
 };
@@ -511,6 +706,427 @@ export const docDetail = {
       `,
       `
       7.有无联合制机构
+      `,
+    ],
+  },
+  b1_idc: {
+    title: require('@/assets/images/dianxin/b1/b1_idc.png'),
+    tips: [
+      `
+      <a href=${qualifyLink.b1_idc}>1.信息表（附件一）点击下载</a>
+      `,
+      `
+      2.公司企业法人营业执照副本彩扫（营业执照经营范围加经营电信业务或经营增值电信业务）
+      `,
+      `
+      3.法定代表人身份证正反面原件彩扫
+      `,
+      `
+      4.一级公司股东身份证正反面原件彩扫及自然人股东得出资额及出资比例，一级股东为公司，提供股东公司名称/出资额/出资比例即可。
+      `,
+      `
+      5.承诺书、无外资承诺、互联网接入承诺、告知承诺（最后统一盖章）
+      `,
+      `
+      6.3个人公司主要管理、技术人员社保证明原件彩扫（近期1个月）
+      `,
+      `
+      7.已获颁电信业务经营许可证原件彩扫（正文页、附页、特别规定事项、年检记录页）
+      `,
+      `
+      8.业务范围和对应机房地址
+      `,
+    ],
+  },
+  b1_cdn: {
+    title: require('@/assets/images/dianxin/b1/b1_cdn.png'),
+    tips: [
+      `
+      <a href=${qualifyLink.b1_cdn}>1.信息表（附件一）点击下载</a>
+      `,
+      `
+      2.公司企业法人营业执照副本彩扫（营业执照经营范围加经营电信业务或经营增值电信业务）
+      `,
+      `
+      3.法定代表人身份证正反面原件彩扫
+      `,
+      `
+      4.一级公司股东身份证正反面原件彩扫及自然人股东得出资额及出资比例，一级股东为公司，提供股东公司名称/出资额/出资比例即可。
+      `,
+      `
+      5.承诺书、无外资承诺、互联网接入承诺、告知承诺（最后统一盖章）
+      `,
+      `
+      6.3个人公司主要管理、技术人员二代社保证明原件彩扫（近期1个月）
+      `,
+      `
+      7.已获颁电信业务经营许可证原件彩扫（正文页、附页、特别规定事项、年检记录页）
+      `,
+      `
+      8.业务范围和对应机房地址
+      `,
+    ],
+  },
+  b1_ipvpn: {
+    title: require('@/assets/images/dianxin/b1/b1_vpn.png'),
+    tips: [
+      `
+      <a href=${qualifyLink.b1_vpn}>1.信息表（附件一）点击下载</a>
+      `,
+      `
+      2.公司企业法人营业执照副本彩扫（经营范围增加经营电信业务）
+      `,
+      `
+      3.法定代表人身份证原件彩扫
+      `,
+      `
+      4.股东信息：一级公司股东为自然人，需提交其身份证正反面原件彩扫；
+      `,
+      `
+      5.承诺书、声明条款、告知承诺（最后统一盖章）
+      `,
+      `
+      6.3个人公司主要管理社保证明原件（近期1个月）；
+      `,
+      `
+      7.已获颁电信业务经营许可证原件彩扫（正文页、附页、特别规定事项、年检记录页）
+      `,
+      `
+      8.业务范围和对应机房地址
+      `,
+    ],
+  },
+  b1_isp: {
+    title: require('@/assets/images/dianxin/b1/b1_isp.png'),
+    tips: [
+      `
+      <a href=${qualifyLink.b1_isp}>1.信息表（附件一）点击下载</a>
+      `,
+      `
+      2.公司企业法人营业执照副本彩扫（营业执照经营范围加经营电信业务或经营增值电信业务）
+      `,
+      `
+      3.法定代表人身份证正反面原件彩扫
+      `,
+      `
+      4.一级公司股东身份证正反面原件彩扫及自然人股东得出资额及出资比例，一级股东为公司，提供股东公司名称/出资额/出资比例即可。
+      `,
+      `
+      5.承诺书、无外资承诺、互联网接入承诺、告知承诺（最后统一盖章）
+      `,
+      `
+      6.3个人公司主要管理、技术人员二代社保证明原件彩扫（近期1个月）；
+      `,
+      `
+      7.已获颁电信业务经营许可证原件彩扫（正文页、附页、特别规定事项、年检记录页）
+      `,
+      `
+      8.机房详细地址写在信息表中
+      `,
+    ],
+  },
+  b2_sp: {
+    title: require('@/assets/images/dianxin/b2/b2_sp.png'),
+    tips: [
+      `
+      <a href=${qualifyLink.b1_sp}>1.信息表（附件一）点击下载</a>
+      `,
+      `
+      2.公司企业法人营业执照副本彩扫（经营范围增加经营电信业务）
+      `,
+      `
+      3.法定代表人身份证原件彩扫
+      `,
+      `
+      4.股东信息：一级公司股东为自然人，需提交其身份证正反面原件彩扫；
+      `,
+      `
+      5.承诺书、声明条款、告知承诺（最后统一盖章）
+      `,
+      `
+      6.3个人公司主要管理社保证明原件（近期1个月）；
+      `,
+      `
+      7.已获颁电信业务经营许可证原件彩扫（正文页、附页、特别规定事项、年检记录页）
+      `,
+    ],
+  },
+  b2_hujiao: {
+    title: require('@/assets/images/dianxin/b2/b2_hujiao.png'),
+    tips: [
+      `
+      <a href=${qualifyLink.b2_hujiao}>1.信息表（附件一）点击下载</a>
+      `,
+      `
+      2.公司企业法人营业执照副本彩扫
+      `,
+      `
+      3.法定代表人身份证原件彩扫
+      `,
+      `
+      4.一级公司股东身份证正反面原件彩扫及自然人股东得出资额及出资比例，一级股东为公司，提供股东公司名称/出资额/出资比例即可。
+      `,
+      `
+      5.承诺书、无外资承诺、无违规经营承诺、告知承诺（最后统一盖章）
+      `,
+      `
+      6.3个人公司主要管理、技术人员社保证明原件（近期1个月）；（未下证前社保不建议断缴，一直保持至少有3个人在上社保）
+      `,
+      `
+      7.已获颁电信业务经营许可证原件彩扫（正文页、附页、特别规定事项、年检记录页）
+      `,
+      `
+      8.开展呼叫中心业务实施计划
+      `,
+    ],
+  },
+  b2_guonei: {
+    title: require('@/assets/images/dianxin/b2/b2_guonei.png'),
+    tips: [
+      `
+      <a href=${qualifyLink.b2_guonei}>1.信息表（附件一）点击下载</a>
+      `,
+      `
+      2.公司企业法人营业执照副本彩扫（经营范围增加经营电信业务）
+      `,
+      `
+      3.法定代表人身份证原件彩扫
+      `,
+      `
+      4.股东信息：一级公司股东为自然人，需提交其身份证正反面原件彩扫；
+      `,
+      `
+      5.承诺书、无外资承诺、无违规经营承诺、告知承诺（最后统一盖章）
+      `,
+      `
+      6.3个人公司主要管理社保证明原件（近期1个月）；
+      `,
+      `
+      7.已获颁电信业务经营许可证原件彩扫（正文页、附页、特别规定事项、年检记录页）
+      `,
+      `
+      8.一级股东身份证正反面原件彩扫自然人股东得出资额及出资比例级股东为公司，提供股东公司名称/出资额/出资比例即可。
+      `,
+    ],
+  },
+  b2_cunchu: {
+    title: require('@/assets/images/dianxin/b2/b2_cunchu.png'),
+    tips: [
+      `
+      <a href=${qualifyLink.b2_cunchu}>1.信息表（附件一）点击下载</a>
+      `,
+      `
+      2.公司企业法人营业执照副本彩扫（经营范围增加经营电信业务）
+      `,
+      `
+      3.法定代表人身份证原件彩扫
+      `,
+      `
+      4.股东信息：一级公司股东为自然人，需提交其身份证正反面原件彩扫；
+      `,
+      `
+      5.承诺书、声明条款、告知承诺（最后统一盖章）
+      `,
+      `
+      6.3个人公司主要管理社保证明原件（近期1个月）
+      `,
+      `
+      7.已获颁电信业务经营许可证原件彩扫（正文页、附页、特别规定事项、年检记录页）
+      `,
+      `
+      8.开展传真存储转发业务工经部要求提供的其他文件（确认办理前具体咨询）
+      `,
+    ],
+  },
+  b2_icp_nei: {
+    title: require('@/assets/images/dianxin/b2/b2_icp_nei.png'),
+    tips: [
+      `
+      <a href=${qualifyLink.b2_icp_nei}>1.信息表（附件一）点击下载</a>
+      `,
+      `
+      2.营业执照副本彩扫(注册资金 ≥ 100万营业范围需含「第二类增值电信业务」)
+      `,
+      `
+      3.一级股东身份证正反面原件彩扫
+      `,
+      `
+      4.法定代表人身份证原件彩扫
+      `,
+      `
+      5.域名证书原件彩扫
+      `,
+      `
+      6.三个主要管理人员社保证明原件（近期1个月）
+      `,
+      `
+      7.股权结构-包含出资比例和金额
+      `,
+    ],
+  },
+  b2_icp_wai: {
+    title: require('@/assets/images/dianxin/b2/b2_icp_wai.png'),
+    tips: [
+      `
+      <a href=${qualifyLink.b2_icp_wai}>1.信息表（附件一）点击下载</a>
+      `,
+      `
+      2.营业执照副本彩扫(注册资金 ≥ 100万营业范围需含「第二类增值电信业务」)
+      `,
+      `
+      3.一级股东身份证正反面原件彩扫
+      `,
+      `
+      4.法定代表人身份证原件彩扫
+      `,
+      `
+      5.域名证书原件彩扫
+      `,
+      `
+      6.三个主要管理人员社保证明原件（近期1个月）
+      `,
+      `
+      7.外方主要投资者（必须是企业法人）需提交外资大股东公司最新有效的商业登记证
+      `,
+      `
+      8.外资大股东电信业务运营经验
+      `,
+      `
+      9.服务器托管协议及托管商资质
+      `,
+      `
+      10.中外方投资者情况表
+      `,
+    ],
+  },
+  b2_icp_waiw: {
+    title: require('@/assets/images/dianxin/b2/b2_icp_wai.png'),
+    tips: [
+      `
+      <a href=${qualifyLink.b2_icp_wai}>1.信息表（附件一）点击下载</a>
+      `,
+      `
+      2.营业执照副本彩扫(注册资金 ≥ 100万营业范围需含「第二类增值电信业务」)
+      `,
+      `
+      3.一级股东身份证正反面原件彩扫
+      `,
+      `
+      4.法定代表人身份证原件彩扫
+      `,
+      `
+      5.域名证书原件彩扫
+      `,
+      `
+      6.三个主要管理人员社保证明原件（近期1个月）
+      `,
+      `
+      7.外方主要投资者（必须是企业法人）需提交外资大股东公司最新有效的商业登记证
+      `,
+      `
+      8.外资大股东电信业务运营经验
+      `,
+      `
+      9.服务器托管协议及托管商资质
+      `,
+      `
+      10.中外方投资者情况表
+      `,
+    ],
+  },
+  b2_edi_nei: {
+    title: require('@/assets/images/dianxin/b2/b2_edi_nei.png'),
+    tips: [
+      `
+      <a href=${qualifyLink.b2_edi_nei}>1.信息表（附件一）点击下载</a>
+      `,
+      `
+      2.营业执照副本彩扫(注册资金 ≥ 100万营业范围需含「第二类增值电信业务」)
+      `,
+      `
+      3.一级股东身份证正反面原件彩扫
+      `,
+      `
+      4.法定代表人身份证原件彩扫
+      `,
+      `
+      5.域名证书原件彩扫
+      `,
+      `
+      6.三个主要管理人员社保证明原件（近期1个月）
+      `,
+      `
+      7.股权结构-包含出资比例和金额
+      `,
+    ],
+  },
+  b2_edi_wai: {
+    title: require('@/assets/images/dianxin/b2/b2_edi_wai.png'),
+    tips: [
+      `
+      <a href=${qualifyLink.b2_edi_wai}>1.信息表（附件一）点击下载</a>
+      `,
+      `
+      2.营业执照副本彩扫(注册资金 ≥ 100万营业范围需含「第二类增值电信业务」)
+      `,
+      `
+      3.一级股东身份证正反面原件彩扫
+      `,
+      `
+      4.法定代表人身份证原件彩扫
+      `,
+      `
+      5.域名证书原件彩扫
+      `,
+      `
+      6.三个主要管理人员社保证明原件（近期1个月）
+      `,
+      `
+      7.外方主要投资者（必须是企业法人）需提交外资大股东公司最新有效的商业登记证
+      `,
+      `
+      8.外资大股东电信业务运营经验
+      `,
+      `
+      9.服务器托管协议及托管商资质
+      `,
+      `
+      10.中外方投资者情况表
+      `,
+    ],
+  },
+  b2_edi_waiw: {
+    title: require('@/assets/images/dianxin/b2/b2_edi_wai.png'),
+    tips: [
+      `
+      <a href=${qualifyLink.b2_edi_wai}>1.信息表（附件一）点击下载</a>
+      `,
+      `
+      2.营业执照副本彩扫(注册资金 ≥ 100万营业范围需含「第二类增值电信业务」)
+      `,
+      `
+      3.一级股东身份证正反面原件彩扫
+      `,
+      `
+      4.法定代表人身份证原件彩扫
+      `,
+      `
+      5.域名证书原件彩扫
+      `,
+      `
+      6.三个主要管理人员社保证明原件（近期1个月）
+      `,
+      `
+      7.外方主要投资者（必须是企业法人）需提交外资大股东公司最新有效的商业登记证
+      `,
+      `
+      8.外资大股东电信业务运营经验
+      `,
+      `
+      9.服务器托管协议及托管商资质
+      `,
+      `
+      10.中外方投资者情况表
       `,
     ],
   },

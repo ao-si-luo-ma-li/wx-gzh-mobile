@@ -59,6 +59,7 @@ export default {
 
   .img-wrap {
     position: relative;
+    overflow: hidden;
   }
 
   .png-1,
@@ -145,8 +146,7 @@ export default {
     &-wrap {
       position: relative;
       padding: toRem(96px * 2) toRem(27px * 2) toRem(40px * 2) toRem(39px * 2);
-      margin: 0 toRem(31px * 2);
-      top: toRem(105px * 2);
+      margin: toRem(105px * 2) toRem(31px * 2);
       left: 0;
       z-index: 2;
     }
@@ -158,7 +158,7 @@ export default {
       left: 0;
       right: 0;
       top: 0;
-      background-size: 100% 100%;
+      background-size: contain;
       background-position: 0 0;
     }
 

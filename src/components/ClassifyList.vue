@@ -13,28 +13,61 @@
       <router-link :to="`/business-list/${tip}`">
         <img :src="png15" alt="" srcset="" class="png-15" />
       </router-link>
-      <router-link :to="`/doc-list/${tip}`">
+      <router-link :to="`${classifyDetial.docPath || `/doc-list/${tip}`}`">
         <img :src="png9" alt="" srcset="" class="png-9" />
       </router-link>
-      <router-link :to="`/cost-list/ww_${tip}`">
-        <img :src="png16" alt="" srcset="" class="png-16" />
+      <router-link :to="`${classifyDetial.costPath || `/cost-list/ww_${tip}`}`">
+        <img
+          :src="png16"
+          alt=""
+          srcset=""
+          class="png-16"
+          v-on:click="handleCostPath"
+        />
       </router-link>
       <img :src="png13" alt="" srcset="" class="png-13" />
       <img :src="png12" alt="" srcset="" class="png-12" />
-      <div class="book-wrap">
+      <div class="video-wrap">暂无视频</div>
+      <div v-if="isArray(classifyDetial.book)">
+        <VueSlickCarousel
+          :arrows="true"
+          :dots="true"
+          class="book-wrap"
+          :draggable="draggable"
+          :infinite="false"
+        >
+          <div
+            class="book-wrap_img-wrap"
+            v-for="img in classifyDetial.book"
+            :key="img"
+          >
+            占位莫删
+            <img :src="img" preview="0" alt="" srcset="" class="png-book" />
+          </div>
+        </VueSlickCarousel>
+      </div>
+      <div v-else class="book-wrap">
         <img
           :src="classifyDetial.book"
           preview="0"
           alt=""
           srcset=""
           class="png-book"
+          v-if="classifyDetial.book"
         />
+        <div v-else>暂无证书模版</div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import VueSlickCarousel from 'vue-slick-carousel';
+// optional style for arrows & dots
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
+import 'vue-slick-carousel/dist/vue-slick-carousel.css';
+import { isArray } from '../utils/util';
+
 export default {
   name: 'classlist',
   props: ['classifyDetial', 'tip'],
@@ -55,11 +88,25 @@ export default {
       png14: require('@/assets/images/classifylist/14.png'),
       png15: require('@/assets/images/classifylist/15.png'),
       png16: require('@/assets/images/classifylist/16.png'),
+      draggable: true,
     };
   },
   mounted() {
-    console.log('+++++++++++++++', this.classifyDetial);
+    setTimeout(() => {
+      this.draggable = false;
+      this.$previewRefresh();
+    }, 100);
   },
+  methods: {
+    isArray,
+    handleCostPath() {
+      if (this.classifyDetial.costCb) {
+        const { costCb } = this.classifyDetial;
+        return costCb.apply(this);
+      }
+    },
+  },
+  components: { VueSlickCarousel },
 };
 </script>
 
@@ -85,8 +132,8 @@ export default {
   .png-15,
   .png-16,
   .png-13,
-  .png-book,
   .book-wrap,
+  .video-wrap,
   .png-title {
     position: absolute;
     z-index: 6;
@@ -174,9 +221,20 @@ export default {
     align-items: center;
     top: toRem(150px * 2);
     right: toRem(36px * 2);
-    width: toRem(188px * 2);
+    width: toRem(176px * 2);
     height: toRem(420px);
     z-index: 9;
+
+    &_img-wrap {
+      font-size: 0;
+      width: toRem(176px * 2);
+      height: toRem(420px);
+      text-align: center;
+    }
+
+    .png-book {
+      margin: auto;
+    }
 
     .png-book.width {
       width: 100%;
@@ -191,6 +249,31 @@ export default {
     width: toRem(370px);
     top: toRem(110px);
     left: toRem(178px);
+  }
+
+  .video-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: toRem(400px);
+    height: toRem(220px);
+    top: toRem(1030px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f0f0f0;
+    z-index: 3;
+  }
+}
+</style>
+<style lang="scss">
+.classify-list {
+  .slick-prev:before,
+  .slick-next:before {
+    color: #000;
+  }
+
+  .slick-dots li button:before {
+    font-size: 12px;
   }
 }
 </style>

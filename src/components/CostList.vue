@@ -248,7 +248,7 @@ $textActive: #fff;
   flex-direction: column;
   min-height: 100vh;
   background: url(../assets/images/costDetail/2.jpg) no-repeat center;
-  background-size: contain;
+  background-size: 100% 100%;
   background-position: 0 0;
 
   .png-3 {

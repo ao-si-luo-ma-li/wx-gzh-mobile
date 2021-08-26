@@ -32,6 +32,7 @@ import ClassifyList from '@/views/tpl/ClassifyList';
 import BusinessList from '@/views/tpl/BusinessList';
 import DocList from '@/views/tpl/DocList';
 import CostList from '@/views/tpl/CostList';
+import DyApplyList from '@/views/game/qualify/DyApplyList';
 
 // gift 页面
 import GiftList from '@/views/gift//List';
@@ -265,6 +266,14 @@ const router = new Router({
       name: 'contract',
       meta: {
         title: '合同下载',
+      },
+    },
+    {
+      path: '/dy-apply-list/:tip?',
+      component: DyApplyList,
+      name: 'dy-apply-list',
+      meta: {
+        title: '业务列表',
       },
     },
   ],
