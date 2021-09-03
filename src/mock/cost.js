@@ -2,14 +2,14 @@ export const cost = {
   wangwen: {
     feeTitle: '网络文化经营许可证',
     type: ['音乐娱乐类', '动漫类'],
-    subType: ['申请', '续办', '更新'],
+    subType: ['申请', '续办', '更新 (续办/变更)'],
     table: [
       {
         subTypeCost: [12000, 8000, 5000],
         multiCost: [
           {
             name: '缺网站',
-            fee: 5000,
+            fee: 3000,
           },
           {
             name: '缺社保',
@@ -26,7 +26,7 @@ export const cost = {
         multiCost: [
           {
             name: '缺网站',
-            fee: 5000,
+            fee: 3000,
           },
           {
             name: '缺社保',
@@ -50,7 +50,7 @@ export const cost = {
         multiCost: [
           {
             name: '缺网站',
-            fee: 5000,
+            fee: 3000,
           },
           {
             name: '缺社保',
@@ -73,7 +73,7 @@ export const cost = {
         multiCost: [
           {
             name: '缺网站',
-            fee: 5000,
+            fee: 3000,
           },
           {
             name: '缺社保',
@@ -118,11 +118,15 @@ export const cost = {
     subType: ['申请', '续办', '变更'],
     table: [
       {
-        subTypeCost: [8000, 3000, 5000],
+        subTypeCost: [80000, 3000, 5000],
         multiCost: [
           {
-            name: '缺经纪人资格证书（按年收费）',
-            fee: 18000,
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
           },
         ],
       },
@@ -138,16 +142,20 @@ export const cost = {
   },
   ww_yanchu: {
     feeTitle: '网络文化经营许可证',
-    type: ['营业性演出许可证办理'],
-    subType: ['申请', '续办', '更新'],
+    type: ['《网络文化经营许可证》-演出剧（节）目、表演'],
+    subType: ['申请', '更新 (续办/变更)'],
     imgTitle: require('@/assets/images/classifylist/ww_yanchu.png'),
     table: [
       {
-        subTypeCost: [8000, 3000, 5000],
+        subTypeCost: [80000, 10000],
         multiCost: [
           {
-            name: '缺经纪人资格证书（按年收费）',
-            fee: 18000,
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺材料',
+            fee: 40000,
           },
         ],
       },
@@ -156,23 +164,23 @@ export const cost = {
   ww_dongman: {
     feeTitle: '网络文化经营许可证',
     type: ['动漫类'],
-    subType: ['申请', '续办', '更新'],
+    subType: ['申请', '更新 (续办/变更)'],
     imgTitle: require('@/assets/images/classifylist/ww_dongman.png'),
     table: [
       {
-        subTypeCost: [12000, 8000, 5000],
+        subTypeCost: [10000, 4000],
         multiCost: [
           {
-            name: '缺网站',
-            fee: 5000,
+            name: '股权结构超过5层以上',
+            fee: 10000,
           },
           {
-            name: '缺社保',
-            fee: 20000,
+            name: '缺网站',
+            fee: 3000,
           },
           {
             name: '缺动漫作品',
-            fee: 20000,
+            fee: 10000,
           },
         ],
       },
@@ -181,19 +189,19 @@ export const cost = {
   ww_yinyue: {
     feeTitle: '网络文化经营许可证',
     type: ['音乐娱乐类'],
-    subType: ['申请', '续办', '更新'],
+    subType: ['申请', '更新 (续办/变更)'],
     imgTitle: require('@/assets/images/classifylist/ww_yinyue.png'),
     table: [
       {
-        subTypeCost: [12000, 8000, 5000],
+        subTypeCost: [10000, 4000],
         multiCost: [
           {
-            name: '缺网站',
-            fee: 5000,
+            name: '股权结构超过5层以上',
+            fee: 10000,
           },
           {
-            name: '缺社保',
-            fee: 10000,
+            name: '缺网站',
+            fee: 3000,
           },
           {
             name: '缺音频',
@@ -205,13 +213,21 @@ export const cost = {
   },
   ww_gbbj: {
     feeTitle: '电视广播节目制作许可证',
-    type: ['电视广播节目制作'],
-    subType: ['申请', '续办', '变更'],
+    type: ['电视广播节目制作 - 北京'],
+    subType: ['申请', '更新 (续办/变更)'],
     imgTitle: require('@/assets/images/guangbo/gb_guangbo.png'),
     table: [
       {
-        subTypeCost: [12000, 8000, 5000],
+        subTypeCost: [10000, 4000],
         multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
           {
             name: '缺学历和视频',
             fee: 10000,
@@ -222,13 +238,21 @@ export const cost = {
   },
   ww_gbsh: {
     feeTitle: '电视广播节目制作许可证',
-    type: ['电视广播节目制作'],
-    subType: ['申请', '续办', '变更'],
+    type: ['电视广播节目制作 - 上海'],
+    subType: ['申请', '更新 (续办/变更)'],
     imgTitle: require('@/assets/images/guangbo/gb_guangbo.png'),
     table: [
       {
-        subTypeCost: [12000, 8000, 5000],
+        subTypeCost: [10000, 4000],
         multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
           {
             name: '缺学历和视频',
             fee: 10000,
@@ -239,13 +263,21 @@ export const cost = {
   },
   ww_gbdy: {
     feeTitle: '电视广播节目制作许可证',
-    type: ['电视广播节目制作'],
+    type: ['电影备案'],
     subType: ['申请', '续办', '变更'],
     imgTitle: require('@/assets/images/guangbo/gb_dianyin.png'),
     table: [
       {
         subTypeCost: [12000, 8000, 5000],
         multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
           {
             name: '缺学历和视频',
             fee: 10000,
@@ -256,13 +288,21 @@ export const cost = {
   },
   ww_gbds: {
     feeTitle: '电视广播节目制作许可证',
-    type: ['电视广播节目制作'],
+    type: ['电视剧备案'],
     subType: ['申请', '续办', '变更'],
     imgTitle: require('@/assets/images/guangbo/gb_dianshi.png'),
     table: [
       {
         subTypeCost: [12000, 8000, 5000],
         multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
           {
             name: '缺学历和视频',
             fee: 10000,
@@ -271,72 +311,225 @@ export const cost = {
       },
     ],
   },
+  ww_yinyan: {
+    feeTitle: '营业性演出许可证',
+    type: ['营业性演出许可证'],
+    subType: ['申请', '变更'],
+    imgTitle: require('@/assets/images/guangbo/gb_yinyan.png'),
+    table: [
+      {
+        subTypeCost: [10000, 4000],
+        multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
+          {
+            name: '缺材料',
+            fee: 30000,
+          },
+        ],
+      },
+    ],
+  },
   ww_b1_idc: {
     feeTitle: '互联网数据中心业务（简称IDC)',
-    type: ['互联网数据中心业务（简称IDC)'],
-    subType: ['申请', '更新'],
+    type: ['北京', '上海'],
+    subType: ['申请', '更新 (续办/变更)'],
     imgTitle: require('@/assets/images/dianxin/b1/b1_idc.png'),
     table: [
       {
-        subTypeCost: [50000, 50000],
+        subTypeCost: [30000, 3000],
+        multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
+        ],
+      },
+      {
+        subTypeCost: [50000, 5000],
+        multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
+        ],
       },
     ],
   },
   ww_b1_isp: {
     feeTitle: '互联网接入服务业务（简称ISP）',
-    type: ['互联网接入服务业务（简称ISP）'],
-    subType: ['申请', '更新'],
+    type: ['单一地区', '全国跨地域(2个城市+)'],
+    subType: ['申请', '更新 (续办/变更)'],
     imgTitle: require('@/assets/images/dianxin/b1/b1_isp.png'),
     table: [
       {
-        subTypeCost: [50000, 50000],
+        subTypeCost: [30000, 3000],
+        multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
+        ],
+      },
+      {
+        subTypeCost: [50000, 5000],
+        multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
+        ],
       },
     ],
   },
   ww_b1_cdn: {
     feeTitle: '内容分发网络业务（简称CDN）',
-    type: ['内容分发网络业务（简称CDN）'],
-    subType: ['申请', '更新'],
+    type: ['北京', '上海'],
+    subType: ['申请', '更新 (续办/变更)'],
     imgTitle: require('@/assets/images/dianxin/b1/b1_cdn.png'),
     table: [
       {
-        subTypeCost: [50000, 50000],
+        subTypeCost: [30000, 3000],
+        multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
+        ],
+      },
+      {
+        subTypeCost: [50000, 5000],
+        multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
+        ],
       },
     ],
   },
   ww_b1_ipvpn: {
     feeTitle: '国内互联网虚拟专用网业务（简称IP-VPN）',
-    type: ['国内互联网虚拟专用网业务（简称IP-VPN）'],
-    subType: ['申请', '更新'],
+    type: ['北京', '上海'],
+    subType: ['申请', '更新 (续办/变更)'],
     imgTitle: require('@/assets/images/dianxin/b1/b1_vpn.png'),
     table: [
       {
-        subTypeCost: [120000, 120000],
+        subTypeCost: [30000, 3000],
+        multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
+        ],
+      },
+      {
+        subTypeCost: [50000, 5000],
+        multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
+        ],
       },
     ],
   },
   ww_b2_sp: {
     feeTitle: 'SP-信息服务',
-    type: ['SP-信息服务'],
-    subType: ['申请', '更新'],
+    type: ['北京', '上海'],
+    subType: ['申请', '更新 (续办/变更)'],
     imgTitle: require('@/assets/images/dianxin/b2/b2_sp.png'),
     table: [
       {
-        subTypeCost: [50000, 50000],
+        subTypeCost: [30000, 3000],
+        multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
+        ],
+      },
+      {
+        subTypeCost: [50000, 5000],
+        multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
+        ],
       },
     ],
   },
   ww_b2_hujiao: {
     feeTitle: '呼叫中心业务',
     type: ['上海', '全国'],
-    subType: ['申请', '更新'],
+    subType: ['申请', '更新 (续办/变更)'],
     imgTitle: require('@/assets/images/dianxin/b2/b2_hujiao.png'),
     table: [
       {
-        subTypeCost: [50000, 50000],
+        subTypeCost: [80000, 5000],
         multiCost: [
           {
-            name: '股权超5层以上',
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
+        ],
+      },
+      {
+        subTypeCost: [160000, 5000],
+        multiCost: [
+          {
+            name: '股权结构超过5层以上',
             fee: 10000,
           },
           {
@@ -349,35 +542,71 @@ export const cost = {
   },
   ww_b2_icp: {
     feeTitle: 'ICP-信息服务-仅限互联网服务',
-    type: ['内资', '外资（<10%）', '外资（>10%）'],
-    subType: ['申请', '更新'],
+    type: ['北京', '上海'],
+    adType: ['内资', '外资（<10%）', '外资（>10%）'],
+    subType: ['申请', '更新 (续办/变更)'],
     imgTitle: require('@/assets/images/dianxin/b2/b2_icp.png'),
     table: [
       {
-        subTypeCost: [50000, 50000],
+        subTypeCost: [30000, 80000, 140000, 3000, 3000, 3000],
+        multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
+        ],
       },
       {
-        subTypeCost: [60000, 60000],
-      },
-      {
-        subTypeCost: [100000, 100000],
+        subTypeCost: [50000, 80000, 140000, 5000, 5000, 5000],
+        multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
+        ],
       },
     ],
   },
   ww_b2_edi: {
     feeTitle: 'EDI-在线数据处理与交易处理业务',
-    type: ['内资', '外资（<10%）', '外资（>10%）'],
-    subType: ['申请', '更新'],
+    type: ['北京', '上海'],
+    adType: ['内资', '外资（<10%）', '外资（>10%）'],
+    subType: ['申请', '更新 (续办/变更)'],
     imgTitle: require('@/assets/images/dianxin/b2/b2_edi.png'),
     table: [
       {
-        subTypeCost: [50000, 50000],
+        subTypeCost: [30000, 80000, 140000, 3000, 3000, 3000],
+        multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
+        ],
       },
       {
-        subTypeCost: [60000, 60000],
-      },
-      {
-        subTypeCost: [100000, 100000],
+        subTypeCost: [40000, 80000, 140000, 5000, 5000, 5000],
+        multiCost: [
+          {
+            name: '股权结构超过5层以上',
+            fee: 10000,
+          },
+          {
+            name: '缺网站',
+            fee: 3000,
+          },
+        ],
       },
     ],
   },

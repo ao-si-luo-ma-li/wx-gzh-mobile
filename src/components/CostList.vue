@@ -20,6 +20,22 @@
             >{{ item }}</span
           >
         </div>
+        <!-- 一级选项 额外附加单选 -->
+        <div
+          class="expect-business flex-box shadow-box"
+          v-if="adType.length > 0"
+        >
+          <span
+            v-for="(item, index) in adType"
+            :key="item"
+            @click="onSwitchAdType"
+            class="fee-item-style"
+            :class="{ active: index === activeAdType }"
+            :data-index="index"
+            >{{ item }}</span
+          >
+        </div>
+
         <!-- 二级选项 -->
         <div class="expect-business-det flex-box shadow-box">
           <span
@@ -88,10 +104,12 @@ export default {
     return {
       data1: [],
       type: [],
+      adType: [],
       subType: [],
       table: [],
       feeTitle: '',
       activeType: 0,
+      activeAdType: 0,
       activeSubType: 0,
       activeOtherType: '',
       isCut: false,
@@ -103,8 +121,9 @@ export default {
     };
   },
   mounted() {
-    const { type, subType, table, feeTitle, remark } = this.cost;
+    const { type, adType = [], subType, table, feeTitle, remark } = this.cost;
     this.type = type;
+    this.adType = adType;
     this.subType = subType;
     this.feeTitle = feeTitle;
     this.table = table;
@@ -123,6 +142,10 @@ export default {
         (this.activeOtherType = ''),
         (this.isCut = false),
         (this.selectedFeeType = []);
+    },
+    onSwitchAdType(e) {
+      const { index } = e.target.dataset;
+      this.activeAdType = +index;
     },
     onSwitchSubType(e) {
       const { index } = e.target.dataset;
@@ -160,14 +183,30 @@ export default {
       const {
         table,
         activeType,
+        activeAdType,
         activeSubType,
         activeOtherType,
         selectedFeeType,
         isCut,
       } = this;
       if (table[activeType]) {
+        // 将 adType 存在时，计算主 activeSubType 对应价格数据的偏移
+        // adType不存在时， activeSubTypeWithAdType === activeSubType
+        const activeSubTypeWithAdType =
+          activeSubType +
+          activeAdType +
+          (activeSubType && this.adType.length > 0
+            ? activeSubType * this.adType.length - 1
+            : 0);
+
+        console.log(
+          'activeSubTypeWithAdType',
+          activeSubType,
+          activeSubTypeWithAdType
+        );
+
         // 申办、续办等费用
-        fee1 = table[activeType].subTypeCost[activeSubType];
+        fee1 = table[activeType].subTypeCost[activeSubTypeWithAdType];
         // 缺少网站等费用
         fee2 = table[activeType].multiCost
           ? table[activeType].multiCost.reduce((start, next, index) => {
@@ -181,7 +220,7 @@ export default {
         // 其他单项补充费用
         fee3 =
           activeOtherType !== ''
-            ? table[activeType].otherSingleCost[activeOtherType].fee
+            ? table[activeTypeWithAdType].otherSingleCost[activeOtherType].fee
             : 0;
       }
       const originFee = fee1 + fee2 + fee3;
@@ -284,9 +323,12 @@ $textActive: #fff;
   border-radius: toRem(36px);
 }
 .fee-item-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.2;
   flex: 1;
   height: toRem(48px * 2);
-  line-height: toRem(48px * 2);
   font-size: toRem(24px);
   padding: 0 3px;
   color: $textColor;

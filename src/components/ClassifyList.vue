@@ -27,6 +27,12 @@
       </router-link>
       <img :src="png13" alt="" srcset="" class="png-13" />
       <img :src="png12" alt="" srcset="" class="png-12" />
+      <div class="price-talk" v-if="showLianXi" v-on:click="handlePriceTalk">
+        <div class="price-talk_wrap">
+          <img :src="png_liann_xi" class="price-talk_pic" alt="" />
+          <a href="tel:13818006978" class="price-talk_call"></a>
+        </div>
+      </div>
       <div class="video-wrap">暂无视频</div>
       <div v-if="isArray(classifyDetial.book)">
         <VueSlickCarousel
@@ -88,7 +94,9 @@ export default {
       png14: require('@/assets/images/classifylist/14.png'),
       png15: require('@/assets/images/classifylist/15.png'),
       png16: require('@/assets/images/classifylist/16.png'),
+      png_liann_xi: require('@/assets/images/classifylist/lianxi.png'),
       draggable: true,
+      showLianXi: false,
     };
   },
   mounted() {
@@ -104,6 +112,9 @@ export default {
         const { costCb } = this.classifyDetial;
         return costCb.apply(this);
       }
+    },
+    handlePriceTalk() {
+      this.showLianXi = !this.showLianXi;
     },
   },
   components: { VueSlickCarousel },
@@ -220,7 +231,7 @@ export default {
     justify-content: center;
     align-items: center;
     top: toRem(150px * 2);
-    right: toRem(36px * 2);
+    right: toRem(46px * 2);
     width: toRem(176px * 2);
     height: toRem(420px);
     z-index: 9;
@@ -262,6 +273,35 @@ export default {
     transform: translateX(-50%);
     background: #f0f0f0;
     z-index: 3;
+  }
+
+  .price-talk {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba($color: #000000, $alpha: 0.5);
+    z-index: 50;
+
+    &_wrap {
+      position: relative;
+    }
+
+    &_pic {
+      width: 100%;
+    }
+
+    &_call {
+      position: absolute;
+      width: 200px;
+      height: 50px;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }
 </style>

@@ -10,16 +10,16 @@ export default {
     return {
       qualifylist: [
         {
-          icon: require('@/assets/images/guangbo/gb_bj.png'),
-          title: '广播节目制作许可证-北京',
+          icon: require('@/assets/images/guangbo/gb_dy.png'),
+          title: '电影备案',
           price: '',
-          path: '/classify-list/gbbj',
+          path: '/classify-list/gbdy',
         },
         {
-          icon: require('@/assets/images/guangbo/gb_sh.png'),
-          title: '广播节目制作许可证-上海',
+          icon: require('@/assets/images/guangbo/gb_ds.png'),
+          title: '电视备案',
           price: '',
-          path: '/classify-list/gbsh',
+          path: '/classify-list/gbds',
         },
       ],
     };

@@ -15,6 +15,7 @@ import QualifyList_2 from '@/views/game/qualify/List_2';
 import QualifyList_3 from '@/views/game/qualify/List_3';
 import QualifyList_4 from '@/views/game/qualify/List_4';
 import QualifyList_5 from '@/views/game/qualify/List_5';
+import QualifyList_5_5 from '@/views/game/qualify/List_5_5';
 import QualifyList_6 from '@/views/game/qualify/List_6';
 
 import DIYList from '@/views/diy//List';
@@ -89,7 +90,7 @@ const router = new Router({
       component: QualifyList_3,
       name: 'qualify-list-3',
       meta: {
-        title: '网络文化经营许可证',
+        title: '文广类资质',
       },
     },
     {
@@ -106,6 +107,14 @@ const router = new Router({
       name: 'qualify-list-5',
       meta: {
         title: '电视广播许可证',
+      },
+    },
+    {
+      path: '/qualify-list-5_5',
+      component: QualifyList_5_5,
+      name: 'qualify-list-5_5',
+      meta: {
+        title: '电影电视剧备案',
       },
     },
     {

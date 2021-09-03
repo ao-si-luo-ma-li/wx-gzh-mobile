@@ -3,6 +3,7 @@
     <div class="img-wrap">
       <img :src="docDetail.title" alt="" srcset="" class="png-title" />
       <div class="content-wrap">
+        <img :src="png10" class="content-header" />
         <div class="content-text">
           <div
             v-for="item in docDetail.tips"
@@ -13,10 +14,6 @@
             <span v-html="item"></span>
           </div>
         </div>
-        <div
-          :style="`background-image: url(${png4});`"
-          class="content-bg"
-        ></div>
         <!-- <img :src="png4" alt="" srcset="" class="png-4" /> -->
         <img :src="png2" alt="" srcset="" class="png-2" />
         <img :src="png9" alt="" srcset="" class="png-9" />
@@ -43,6 +40,7 @@ export default {
       png6: require('@/assets/images/docDetail/6.png'),
       png8: require('@/assets/images/docDetail/8.png'),
       png9: require('@/assets/images/docDetail/9.png'),
+      png10: require('@/assets/images/docDetail/10.jpg'),
     };
   },
   mounted() {
@@ -145,35 +143,44 @@ export default {
   .content {
     &-wrap {
       position: relative;
-      padding: toRem(96px * 2) toRem(27px * 2) toRem(40px * 2) toRem(39px * 2);
+      padding: toRem(70px * 2) 0 0 0;
       margin: toRem(105px * 2) toRem(31px * 2);
       left: 0;
       z-index: 2;
     }
 
-    &-bg {
+    &-header {
       position: absolute;
-      width: 100%;
-      height: 100%;
+      width: toRem(327px * 2);
+      height: toRem(70px * 2);
       left: 0;
       right: 0;
       top: 0;
       background-size: contain;
-      background-position: 0 0;
     }
 
     &-text {
+      min-height: 50vh;
       position: relative;
+      padding: toRem(26px * 2) toRem(27px * 2) toRem(40px * 2) toRem(27px * 2);
       color: #333;
       font-size: 14px;
-      z-index: 10;
+      z-index: 3;
+      background: #fff;
+      border-style: solid;
+      border-color: #333;
+      border-width: 0 2px 2px 2px;
 
       &_item {
         position: relative;
-        padding: toRem(8px) toRem(34px * 2) toRem(20px);
+        padding: 10px 20px;
+        background: #ffdc03;
+        border-radius: 6px;
+        box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
         margin-bottom: toRem(20px);
 
         img {
+          display: none;
           position: absolute;
           top: 0;
           left: 0;
