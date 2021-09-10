@@ -42,6 +42,9 @@ import GF_move from '@/views/gift/GF_move';
 import GF_school from '@/views/gift/GF_school';
 import Contract from '@/views/contract/view';
 
+import QualifyArtRd from '@/views/rd/artRD';
+import QualifyTestRd from '@/views/rd/testRD';
+
 const router = new Router({
   scrollBehavior(to, from, savedPosition) {
     return { x: 0, y: 0 };
@@ -58,7 +61,7 @@ const router = new Router({
       component: QualifyList,
       name: 'qualify-list',
       meta: {
-        title: '游戏资格办理',
+        title: '业务入口',
       },
     },
     {
@@ -283,6 +286,22 @@ const router = new Router({
       name: 'dy-apply-list',
       meta: {
         title: '业务列表',
+      },
+    },
+    {
+      path: '/qualify-art-rd',
+      component: QualifyArtRd,
+      name: 'art-rd',
+      meta: {
+        title: '美术外包',
+      },
+    },
+    {
+      path: '/qualify-test-rd',
+      component: QualifyTestRd,
+      name: 'test-rd',
+      meta: {
+        title: '测试外包',
       },
     },
   ],

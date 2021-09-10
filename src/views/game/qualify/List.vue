@@ -48,6 +48,16 @@ export default {
         },
         {
           icon: require('@/assets/images/abroad_yt.png'),
+          title: '美术外包业务',
+          path: '/qualify-art-rd',
+        },
+        {
+          icon: require('@/assets/images/abroad_fb.png'),
+          title: '测试外包业务',
+          path: '/qualify-test-rd',
+        },
+        {
+          icon: require('@/assets/images/abroad_yt.png'),
           title: 'Youtube平台植入',
           price: '3000.00起',
           path: '',
