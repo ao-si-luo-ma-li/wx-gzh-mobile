@@ -30,6 +30,10 @@ import TradeDetail from '@/views/trade/Detail';
 import Partner from '@/views/partner/List';
 
 import ClassifyList from '@/views/tpl/ClassifyList';
+import SimpClassifyList from '@/views/tpl/SimpClassifyList';
+import SimpBusinessList from '@/views/tpl/SimpBusinessList';
+import SimpDocList from '@/views/tpl/SimpDocList';
+import SimpQualifyList_4 from '@/views/game/qualify/SimpList_4';
 import BusinessList from '@/views/tpl/BusinessList';
 import DocList from '@/views/tpl/DocList';
 import CostList from '@/views/tpl/CostList';
@@ -98,7 +102,7 @@ const router = new Router({
     },
     {
       path: '/qualify-list-4',
-      component: QualifyList_4,
+      component: SimpQualifyList_4,
       name: 'qualify-list-4',
       meta: {
         title: '电信增值业务经营许可证(ICP)',
@@ -174,6 +178,30 @@ const router = new Router({
       name: 'gift-list',
       meta: {
         title: '鲜花礼品服务',
+      },
+    },
+    {
+      path: '/simp-classify-list/:tip/:title?',
+      component: SimpClassifyList,
+      name: 'simp-classify-list',
+      meta: {
+        title: '业务明细',
+      },
+    },
+    {
+      path: '/simp-business-list/:tip/:title?',
+      component: SimpBusinessList,
+      name: 'simp-business-list',
+      meta: {
+        title: '业务说明',
+      },
+    },
+    {
+      path: '/simp-doc-list/:tip/:title?',
+      component: SimpDocList,
+      name: 'simp-doc-list',
+      meta: {
+        title: '材料明细',
       },
     },
     {

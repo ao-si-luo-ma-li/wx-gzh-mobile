@@ -250,44 +250,44 @@ export const classifyDetial = {
     video: '',
   },
   b1_idc: {
-    title: require('@/assets/images/dianxin/b1/b1_idc.png'),
+    title: require('@/assets/images/simp_dianxin/b1/b1_idc.png'),
     book: require('@/assets/images/dianxin/b1/book_b1_idc.png'),
     video: '',
   },
   b1_cdn: {
-    title: require('@/assets/images/dianxin/b1/b1_cdn.png'),
+    title: require('@/assets/images/simp_dianxin/b1/b1_cdn.png'),
     book: require('@/assets/images/dianxin/b1/book_b1_cdn.jpg'),
     video: '',
   },
   b1_ipvpn: {
-    title: require('@/assets/images/dianxin/b1/b1_vpn.png'),
+    title: require('@/assets/images/simp_dianxin/b1/b1_vpn.png'),
     book: require('@/assets/images/dianxin/b1/book_b1_vpn.png'),
     video: '',
   },
   b1_isp: {
-    title: require('@/assets/images/dianxin/b1/b1_isp.png'),
+    title: require('@/assets/images/simp_dianxin/b1/b1_isp.png'),
     book: require('@/assets/images/dianxin/b1/book_b1_isp.png'),
     video: '',
   },
   b2_edi: {
-    title: require('@/assets/images/dianxin/b2/b2_edi.png'),
+    title: require('@/assets/images/simp_dianxin/b2/b2_edi.png'),
     book: require('@/assets/images/dianxin/b2/book_b2_edi_1.jpg'),
     docPath: '/dy-apply-list/b2_edi',
     video: '',
   },
   b2_icp: {
-    title: require('@/assets/images/dianxin/b2/b2_icp.png'),
+    title: require('@/assets/images/simp_dianxin/b2/b2_icp.png'),
     book: require('@/assets/images/dianxin/b2/book_b2_icp_double.png'),
     docPath: '/dy-apply-list/b2_icp',
     video: '',
   },
   b2_sp: {
-    title: require('@/assets/images/dianxin/b2/b2_sp.png'),
+    title: require('@/assets/images/simp_dianxin/b2/b2_sp.png'),
     book: require('@/assets/images/dianxin/b2/book_b2_sp.png'),
     video: '',
   },
   b2_guonei: {
-    title: require('@/assets/images/dianxin/b2/b2_guonei.png'),
+    title: require('@/assets/images/simp_dianxin/b2/b2_guonei.png'),
     book: require('@/assets/images/dianxin/b2/book_b2_guonei.png'),
     video: '',
     costPath: '#',
@@ -297,12 +297,12 @@ export const classifyDetial = {
     },
   },
   b2_hujiao: {
-    title: require('@/assets/images/dianxin/b2/b2_hujiao.png'),
+    title: require('@/assets/images/simp_dianxin/b2/b2_hujiao.png'),
     book: require('@/assets/images/dianxin/b2/book_b2_hujiao.jpg'),
     video: '',
   },
   b2_cunchu: {
-    title: require('@/assets/images/dianxin/b2/b2_cunchu.png'),
+    title: require('@/assets/images/simp_dianxin/b2/b2_cunchu.png'),
     book: '',
     video: '',
     costPath: '#',
@@ -422,7 +422,7 @@ export const businessDetial = {
     `,
   },
   b1_idc: {
-    title: require('@/assets/images/dianxin/b1/b1_idc.png'),
+    title: require('@/assets/images/simp_dianxin/b1/b1_idc.png'),
     content: `
     互联网数据中心（Internet Data Center）
     简称IDC，是电信部门利用已有互联网通信线路
@@ -432,7 +432,7 @@ export const businessDetial = {
     `,
   },
   b1_cdn: {
-    title: require('@/assets/images/dianxin/b1/b1_cdn.png'),
+    title: require('@/assets/images/simp_dianxin/b1/b1_cdn.png'),
     content: `
     CDN指利用分布在不同区域的节点服务器群组成
     流量分配管理网络平台，为用户提供内容的分
@@ -445,7 +445,7 @@ export const businessDetial = {
     `,
   },
   b1_ipvpn: {
-    title: require('@/assets/images/dianxin/b1/b1_vpn.png'),
+    title: require('@/assets/images/simp_dianxin/b1/b1_vpn.png'),
     content: `
     国内互联网虚拟专用网业务（IP-VPN）是指
     经营者利用自有或租用的互联网网络资源，
@@ -458,7 +458,7 @@ export const businessDetial = {
     `,
   },
   b1_isp: {
-    title: require('@/assets/images/dianxin/b1/b1_isp.png'),
+    title: require('@/assets/images/simp_dianxin/b1/b1_isp.png'),
     content: `
     互联网服务提供商（Internet Service Provider）
     简称ISP，经营者：一是接入服务，即帮助用户
@@ -470,7 +470,7 @@ export const businessDetial = {
     `,
   },
   b2_edi: {
-    title: require('@/assets/images/dianxin/b2/b2_edi.png'),
+    title: require('@/assets/images/simp_dianxin/b2/b2_edi.png'),
     content: `
     利用各种与公用通信网或互联网相连的数据与
     交易/事务处理应用平台，通过网络为用户提供
@@ -481,7 +481,7 @@ export const businessDetial = {
     `,
   },
   b2_icp: {
-    title: require('@/assets/images/dianxin/b2/b2_icp.png'),
+    title: require('@/assets/images/simp_dianxin/b2/b2_icp.png'),
     content: `
     ICP-信息服务-仅限互联网服务 是指通过信息采
     集、开发、处理和信息平台的建设，通过公用
@@ -492,7 +492,7 @@ export const businessDetial = {
     `,
   },
   b2_sp: {
-    title: require('@/assets/images/dianxin/b2/b2_sp.png'),
+    title: require('@/assets/images/simp_dianxin/b2/b2_sp.png'),
     content: `
     <div style="line-height: 1.6">
     SP-信息服务-信息即时交互服务指利用公用通
@@ -508,7 +508,7 @@ export const businessDetial = {
     `,
   },
   b2_guonei: {
-    title: require('@/assets/images/dianxin/b2/b2_guonei.png'),
+    title: require('@/assets/images/simp_dianxin/b2/b2_guonei.png'),
     content: `
     <div style="margin-top: -15px;">
     国内多方通信服务业务是指通过多方通信平台
@@ -523,7 +523,7 @@ export const businessDetial = {
     `,
   },
   b2_hujiao: {
-    title: require('@/assets/images/dianxin/b2/b2_hujiao.png'),
+    title: require('@/assets/images/simp_dianxin/b2/b2_hujiao.png'),
     content: `
     <div style="line-height: 1.5;margin-top:-16px">
     呼叫中心业务是指受企事业等相关单位委托，
@@ -541,7 +541,7 @@ export const businessDetial = {
     `,
   },
   b2_cunchu: {
-    title: require('@/assets/images/dianxin/b2/b2_cunchu.png'),
+    title: require('@/assets/images/simp_dianxin/b2/b2_cunchu.png'),
     content: `
     存储转发类业务是指利用存储转发机制为用户
     提供信息发送的业务。存储转发类业务包括语
@@ -746,7 +746,7 @@ export const docDetail = {
     ],
   },
   b1_idc: {
-    title: require('@/assets/images/dianxin/b1/b1_idc.png'),
+    title: require('@/assets/images/simp_dianxin/b1/b1_idc.png'),
     tips: [
       `
       1.公司企业法人营业执照副本彩扫（经营范围增加经营电信业务）
@@ -838,7 +838,7 @@ export const docDetail = {
     ],
   },
   b2_sp: {
-    title: require('@/assets/images/dianxin/b2/b2_sp.png'),
+    title: require('@/assets/images/simp_dianxin/b2/b2_sp.png'),
     tips: [
       `
       1。公司企业法人营业执照副本彩扫
@@ -858,7 +858,7 @@ export const docDetail = {
     ],
   },
   b2_hujiao: {
-    title: require('@/assets/images/dianxin/b2/b2_hujiao.png'),
+    title: require('@/assets/images/simp_dianxin/b2/b2_hujiao.png'),
     tips: [
       `
       1.公司企业法人营业执照副本彩扫
@@ -884,7 +884,7 @@ export const docDetail = {
     ],
   },
   b2_guonei: {
-    title: require('@/assets/images/dianxin/b2/b2_guonei.png'),
+    title: require('@/assets/images/simp_dianxin/b2/b2_guonei.png'),
     tips: [
       `
       1.一级股东身份证正反面原件彩扫自然人股东得出资额及出资比例级股东为公司，提供股东公司名称/出资额/出资比例即可。
@@ -901,7 +901,7 @@ export const docDetail = {
     ],
   },
   b2_cunchu: {
-    title: require('@/assets/images/dianxin/b2/b2_cunchu.png'),
+    title: require('@/assets/images/simp_dianxin/b2/b2_cunchu.png'),
     tips: [
       `
       1.公司企业法人营业执照副本彩扫（经营范围增加经营电信业务）

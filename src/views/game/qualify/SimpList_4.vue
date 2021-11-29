@@ -1,9 +1,9 @@
 <template>
-  <tab-classify-list :tabList="qualifylist"></tab-classify-list>
+  <simp-tab-classify-list :tabList="qualifylist"></simp-tab-classify-list>
 </template>
 
 <script>
-import TabClassifyList from '../../../components/TabClassifyList.vue';
+import SimpTabClassifyList from '../../../components/SimpTabClassifyList.vue';
 export default {
   name: 'qualify-list-4',
   data() {
@@ -13,19 +13,19 @@ export default {
           title: '第一类增值电信业务（B1）',
           list: [
             {
-              title: `<div>互联网数据中心业务（简称IDC)</div>`,
+              title: `<div >互联网数据中心业务（简称IDC)</div>`,
               path: '/simp-classify-list/b1_idc',
             },
             {
-              title: '<div>内容分发网络业务（简称CDN）</div>',
+              title: '<div >内容分发网络业务（简称CDN）</div>',
               path: '/simp-classify-list/b1_cdn',
             },
             {
-              title: '<div>国内互联网虚拟专用网业务（简称IP-VPN）</div>',
+              title: '<div >国内互联网虚拟专用网业务（简称IP-VPN）</div>',
               path: '/simp-classify-list/b1_ipvpn',
             },
             {
-              title: '<div>互联网接入服务业务（简称ISP）</div>',
+              title: '<div >互联网接入服务业务（简称ISP）</div>',
               path: '/simp-classify-list/b1_isp',
             },
           ],
@@ -63,7 +63,7 @@ export default {
     };
   },
   components: {
-    TabClassifyList,
+    SimpTabClassifyList,
   },
 };
 </script>
