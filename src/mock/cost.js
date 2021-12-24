@@ -532,7 +532,7 @@ export const cost = {
     imgTitle: require('@/assets/images/simp_dianxin/b2/b2_icp.png'),
     table: [
       {
-        subTypeCost: [30000, 80000, 140000, 3000, 3000, 3000],
+        subTypeCost: [30000, 80000, 200000, 3000, 3000, 3000],
         multiCost: [
           {
             name: '股权结构超过5层以上',
@@ -580,7 +580,7 @@ export const cost = {
         ],
       },
       {
-        subTypeCost: [40000, 80000, 140000, 5000, 8000, 8000],
+        subTypeCost: [40000, 80000, 200000, 5000, 8000, 8000],
         multiCost: [
           {
             name: '股权结构超过5层以上',
