@@ -10,7 +10,7 @@ export default {
     return {
       qualifylist: [
         {
-          title: '第一类增值电信业务（B1）',
+          title: '第一类增值电信业务(B1)',
           list: [
             {
               title: `<div >互联网数据中心业务（简称IDC)</div>`,
@@ -31,7 +31,7 @@ export default {
           ],
         },
         {
-          title: '&nbsp;&nbsp;&nbsp;第二类增值电信业务（B2）',
+          title: '第二类增值电信业务(B2)',
           list: [
             {
               title: 'EDI-在线数据处理与交易处理业务',
