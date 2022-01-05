@@ -172,22 +172,9 @@ export default {
           volume: 0.7,
           mutex: true,
           video: {
-            url:
-              // 'http://www.k-joys.com/ICP%E5%B9%B4%E6%A3%80%E8%A7%86%E9%A2%912021%E7%89%88.flv',
-              // 'https://pl.dogevideo.com/vcloud/hls/m3u8/99552.m3u8?tm=1641284572&vtype=96&uid=17&sign=85b7404a28b359f8d78b9ff241bf67d0&icp=0&durlimit=0&server=s5&vkey=A3801F&token=44b4765eb6e12118445ed717b7384da0&oi=1962285062&ext=.m3u8',
-              'https://api.dogecloud.com/player/get.m3u8?vcode=5ac682e6f8231991&userId=17&ext=.m3u8',
-            // type: 'customFlv',
+            url: 'http://www.k-joys.com/video/9s.m3u8',
             type: 'customHls',
             customType: {
-              // customFlv: function(video, player) {
-              //   const flvPlayer = flvjs.createPlayer({
-              //     type: 'flv',
-              //     url: video.src,
-              //   });
-              //   flvPlayer.attachMediaElement(video);
-              //   flvPlayer.load();
-              // },
-
               customHls: function(video, player) {
                 const hls = new Hls();
                 hls.loadSource(video.src);
