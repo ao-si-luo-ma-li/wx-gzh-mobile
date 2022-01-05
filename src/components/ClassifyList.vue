@@ -36,7 +36,8 @@
         </div>
       </div>
       <div class="video-wrap">暂无视频</div>
-      <div v-if="isArray(classifyDetial.book)">
+      <!-- [RECORD] 证书样例没有多张的可能性。以下逻辑不会出现，注释掉引入及使用的相关代码，减小打包后体积 -->
+      <!-- <div v-if="isArray(classifyDetial.book)">
         <VueSlickCarousel
           :arrows="true"
           :dots="true"
@@ -53,6 +54,16 @@
             <img :src="img" preview="0" alt="" srcset="" class="png-book" />
           </div>
         </VueSlickCarousel>
+      </div> -->
+      <div v-if="isArray(classifyDetial.book)">
+        <div
+          class="book-wrap_img-wrap"
+          v-for="img in classifyDetial.book"
+          :key="img"
+        >
+          占位莫删
+          <img :src="img" preview="0" alt="" srcset="" class="png-book" />
+        </div>
       </div>
       <div v-else class="book-wrap">
         <img
@@ -70,10 +81,9 @@
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel';
-// optional style for arrows & dots
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
-import 'vue-slick-carousel/dist/vue-slick-carousel.css';
+// import VueSlickCarousel from 'vue-slick-carousel';
+// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
+// import 'vue-slick-carousel/dist/vue-slick-carousel.css';
 import { isArray } from '../utils/util';
 
 export default {
@@ -119,7 +129,7 @@ export default {
       this.showLianXi = !this.showLianXi;
     },
   },
-  components: { VueSlickCarousel },
+  // components: { VueSlickCarousel },
 };
 </script>
 
